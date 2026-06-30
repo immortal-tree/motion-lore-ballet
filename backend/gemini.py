@@ -3,9 +3,9 @@ import time
 from datetime import datetime, timezone
 from google import genai
 from google.genai import types
-from backend.config import settings
-from backend.models import SubtitleCue, SubtitleTrack
-from backend.groq_utils import is_title_clear, get_ballet_context
+from config import settings
+from models import SubtitleCue, SubtitleTrack
+from groq_utils import is_title_clear, get_ballet_context
 
 client = genai.Client(api_key=settings.gemini_api_key)
 

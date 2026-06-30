@@ -2,8 +2,8 @@ import boto3
 import json
 from datetime import datetime, timezone
 from typing import Optional
-from backend.config import settings
-from backend.models import SubtitleTrack
+from config import settings
+from models import SubtitleTrack
 
 _kwargs = dict(
     region_name=settings.dynamodb_region,

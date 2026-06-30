@@ -8,12 +8,11 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.config import settings
-from backend.models import AnalyzeResponse, JobStatusResponse, SubtitleTrack
-from backend.dynamo import get_subtitles, put_subtitles, create_job, get_job, update_job
-from backend.gemini import analyze_video
-from backend.storage import upload_to_s3, download_from_s3, delete_from_s3
-from backend.storage import upload_to_s3, download_from_s3, generate_presigned_url
+from config import settings
+from models import AnalyzeResponse, JobStatusResponse, SubtitleTrack
+from dynamo import get_subtitles, put_subtitles, create_job, get_job, update_job
+from gemini import analyze_video
+from storage import upload_to_s3, download_from_s3, delete_from_s3, generate_presigned_url
 
 
 def normalize_youtube_url(url: str) -> str:
